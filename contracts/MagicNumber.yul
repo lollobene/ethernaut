@@ -11,17 +11,3 @@ object "MagicNumberYUL" {
         }
     }
 }
-
-
-// object "MagicNumberYUL_deployed" {
-//         code {
-//             let selector := shr(224, calldataload(0))
-//             switch selector
-//             case 0x650500c1
-//             {
-//                 mstore(0, 0x2a)
-//                 return(0, 32)
-//             }
-//             revert(0,0)
-//         }
-//     }

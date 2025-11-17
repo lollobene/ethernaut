@@ -10,7 +10,7 @@ contract PreservationAttacker {
         owner = address(uint160(t));
     }
 
-    function addressToInt(address a) public pure returns (uint) {
-        return uint256(uint160(a));
+    function addressToInt() public view returns (uint) {
+        return uint256(uint160(address(this)));
     }
 }
