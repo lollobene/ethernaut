@@ -1,8 +1,9 @@
 # Node modules
 /node_modules
 
-# Compilation output
-/dist
+# Remix plugin state folders
+deps/
+states/
 
 # pnpm deploy output
 /bundle
