@@ -3,7 +3,7 @@
 
 # Remix plugin state folders
 deps/
-states/
+.states/
 
 # pnpm deploy output
 /bundle
