@@ -1,1 +1,1 @@
-# Ethernaut sovlers
+# Ethernaut solvers
