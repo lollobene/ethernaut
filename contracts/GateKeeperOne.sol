@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -30,19 +29,16 @@ contract GatekeeperOne {
 
 contract GateKeeperOneHelper {
 
+    bytes8 gateKey = 0x001000000000625a;
     GatekeeperOne gateKeeper;
+
 
     constructor(address gateKeeperOne) {
         gateKeeper = GatekeeperOne(gateKeeperOne);
     }
 
-    function enterGate(uint increment, bytes8 _gateKey) public {
+    function enterGate(uint increment) public {
         // increment should be 256
-        gateKeeper.enter{gas: 8191 * 4 + increment}(_gateKey);
-    }
-
-    function getKey() public view returns (bytes8) {
-        bytes8 key = bytes8(uint64(uint160(address(msg.sender)))) & 0xFFFFFFFF0000FFFF;
-        return key;
+        gateKeeper.enter{gas: 8191 * 4 + increment}(gateKey);
     }
 }
